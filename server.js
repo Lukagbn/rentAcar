@@ -9,9 +9,11 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
-const carRoute = require("./routes/cars");
+const carRoute = require("./routes/car");
+const reviewRoute = require("./routes/review");
 
 app.use("/cars", carRoute);
+app.use("/review", reviewRoute);
 
 mongoose
   .connect(process.env.MONGO_URI)

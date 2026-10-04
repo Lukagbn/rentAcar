@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const mongoose = require("mongoose");
 const Car = require("../models/Car.js");
 
 router.get("/", async (req, res) => {
