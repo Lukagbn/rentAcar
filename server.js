@@ -1,11 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+const cors = require("cors");
 const PORT = 4000;
 
 require("dotenv").config();
 
+app.use(cors());
 app.use(express.json());
+
+const carRoute = require("./routes/cars");
+
+app.use("/cars", carRoute);
 
 mongoose
   .connect(process.env.MONGO_URI)
