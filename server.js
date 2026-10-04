@@ -11,9 +11,11 @@ app.use(express.json());
 
 const carRoute = require("./routes/car");
 const reviewRoute = require("./routes/review");
+const authRoute = require("./routes/user");
 
 app.use("/cars", carRoute);
 app.use("/review", reviewRoute);
+app.use("/auth", authRoute);
 
 mongoose
   .connect(process.env.MONGO_URI)
