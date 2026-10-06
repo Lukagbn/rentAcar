@@ -46,4 +46,16 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.get("/:_id", async (req, res) => {
+  try {
+    const _id = req.params._id;
+    const carDetails = await Car.findById(_id);
+    if (!carDetails) {
+      res.status(400).json({ message: "Wrong car id!" });
+    }
+    res.status(200).json({ carDetails });
+  } catch (error) {
+    console.log("error", error);
+  }
+});
 module.exports = router;

@@ -42,7 +42,7 @@ router.post("/", async (req, res) => {
       comment,
       userId,
       carId,
-      userName: user.userName,
+      nickname: user.nickname,
     });
     await newReview.save();
 
